@@ -16,7 +16,7 @@ df = df_users_ab.merge(df_users[['user_id', 'gender', 'age_segment']],
 contingency = pd.crosstab(df['group_name'], df['industry'])
 chi2, p_value, dof, expected = chi2_contingency(contingency)
 print(f"Chi-square p-value: {p_value:.4f}")
-print(f"Группы однородны: {'✓' if p_value > 0.05 else '✗'}")
+print(f"Группы однородны: {'ДА' if p_value > 0.05 else 'НЕТ'}")
 
 # 3. Анализ template_activity
 
